@@ -1,0 +1,755 @@
+/*
+ * LaporBanjir - Sistem Pelaporan Banjir BPBD Kabupaten Bandung
+ * File: public/css/style.css
+ * Tema warna: Biru / Air
+ */
+
+/* =========================================================================
+   RESET & BASE
+   ========================================================================= */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f9ff;
+    color: #1e293b;
+    line-height: 1.6;
+}
+
+a {
+    color: #1a56db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+}
+
+/* =========================================================================
+   NAVBAR
+   ========================================================================= */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(135deg, #1a56db, #1e40af);
+    color: white;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.navbar-brand:hover {
+    text-decoration: none;
+    opacity: 0.95;
+}
+
+.navbar-brand i {
+    font-size: 1.3rem;
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    gap: 0.25rem;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-menu a {
+    color: rgba(255, 255, 255, 0.85);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.navbar-menu a:hover,
+.navbar-menu a.active {
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+    text-decoration: none;
+}
+
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* =========================================================================
+   HERO SECTION
+   ========================================================================= */
+.hero-section {
+    background: linear-gradient(135deg, #1a56db 0%, #06b6d4 100%);
+    color: white;
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
+    animation: rotate 30s linear infinite;
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    position: relative;
+    z-index: 1;
+    line-height: 1.8;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: white;
+    color: #1a56db;
+    padding: 1rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.hero-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    text-decoration: none;
+    color: #1e40af;
+}
+
+/* =========================================================================
+   CONTAINER
+   ========================================================================= */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* =========================================================================
+   PAGE HEADER
+   ========================================================================= */
+.page-header {
+    text-align: center;
+    padding: 6rem 2rem 2rem;
+    margin-bottom: 1rem;
+}
+
+.page-header h1 {
+    font-size: 2.2rem;
+    color: #1e40af;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    color: #475569;
+    font-size: 1.1rem;
+}
+
+/* =========================================================================
+   CARDS
+   ========================================================================= */
+.card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07),
+                0 2px 4px rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.card-icon.blue {
+    background: #dbeafe;
+    color: #1a56db;
+}
+
+.card-icon.cyan {
+    background: #cffafe;
+    color: #06b6d4;
+}
+
+.card-icon.green {
+    background: #d1fae5;
+    color: #10b981;
+}
+
+.card-icon.amber {
+    background: #fef3c7;
+    color: #f59e0b;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+}
+
+.card p {
+    color: #475569;
+    line-height: 1.7;
+}
+
+/* =========================================================================
+   GRID LAYOUTS
+   ========================================================================= */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+/* =========================================================================
+   FORMS
+   ========================================================================= */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #1e293b;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    background: #f8fafc;
+    font-family: inherit;
+    color: #1e293b;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #3b82f6;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+    background: white;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group .hint {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-top: 0.25rem;
+}
+
+.form-group .error {
+    color: #ef4444;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+}
+
+/* =========================================================================
+   BUTTONS
+   ========================================================================= */
+.btn {
+    display: inline-block;
+    padding: 0.875rem 2rem;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    font-family: inherit;
+}
+
+.btn:hover {
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: #1a56db;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1e40af;
+    transform: translateY(-1px);
+    color: white;
+}
+
+.btn-secondary {
+    background: #e2e8f0;
+    color: #475569;
+}
+
+.btn-secondary:hover {
+    background: #cbd5e1;
+}
+
+.btn-success {
+    background: #10b981;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #059669;
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: white;
+}
+
+.btn-danger:hover {
+    background: #dc2626;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #1a56db;
+    color: #1a56db;
+}
+
+.btn-outline:hover {
+    background: #1a56db;
+    color: white;
+}
+
+.btn-lg {
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+}
+
+/* =========================================================================
+   KONFIRMASI
+   ========================================================================= */
+.konfirmasi-box {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+    border: 2px solid #10b981;
+    border-radius: 16px;
+    padding: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.konfirmasi-box .icon-success {
+    font-size: 3rem;
+    color: #10b981;
+    margin-bottom: 1rem;
+}
+
+.konfirmasi-box h2 {
+    color: #065f46;
+    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+}
+
+.konfirmasi-detail {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: left;
+}
+
+.konfirmasi-detail table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.konfirmasi-detail table th {
+    text-align: left;
+    padding: 0.75rem 1rem;
+    color: #475569;
+    font-weight: 600;
+    width: 40%;
+    border-bottom: 1px solid #e2e8f0;
+    vertical-align: top;
+}
+
+.konfirmasi-detail table td {
+    padding: 0.75rem 1rem;
+    color: #1e293b;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.no-laporan {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a56db;
+    letter-spacing: 2px;
+}
+
+/* =========================================================================
+   FOOTER
+   ========================================================================= */
+.footer {
+    background: #1e293b;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.footer a {
+    color: #3b82f6;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+.footer-content {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer p {
+    margin: 0.25rem 0;
+}
+
+/* =========================================================================
+   ALERTS
+   ========================================================================= */
+.alert {
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.alert-danger {
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+}
+
+.alert-success {
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #065f46;
+}
+
+.alert-info {
+    background: #eff6ff;
+    border: 1px solid #bfdbfe;
+    color: #1e40af;
+}
+
+/* =========================================================================
+   STEPS (PANDUAN)
+   ========================================================================= */
+.steps {
+    counter-reset: step;
+}
+
+.step {
+    position: relative;
+    padding-left: 4rem;
+    margin-bottom: 2rem;
+}
+
+.step::before {
+    counter-increment: step;
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3rem;
+    height: 3rem;
+    background: #1a56db;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.step h4 {
+    margin: 0 0 0.25rem;
+    color: #1e293b;
+    font-size: 1.1rem;
+}
+
+.step p {
+    margin: 0;
+    color: #475569;
+}
+
+/* =========================================================================
+   TINGGI GENANGAN INDICATOR
+   ========================================================================= */
+.tinggi-indicator {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.tinggi-level {
+    flex: 1;
+    text-align: center;
+    padding: 0.75rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.tinggi-level.rendah {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.tinggi-level.sedang {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.tinggi-level.tinggi {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* =========================================================================
+   ANIMATIONS
+   ========================================================================= */
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* =========================================================================
+   PRINT STYLES
+   ========================================================================= */
+@media print {
+    .navbar,
+    .footer,
+    .btn,
+    .hamburger {
+        display: none !important;
+    }
+
+    .page-header {
+        padding-top: 1rem;
+    }
+
+    body {
+        background: white;
+    }
+
+    .card {
+        box-shadow: none;
+        border: 1px solid #e2e8f0;
+    }
+}
+
+/* =========================================================================
+   RESPONSIVE
+   ========================================================================= */
+@media (max-width: 768px) {
+    .grid-2,
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+    }
+
+    .hero-section {
+        padding: 7rem 1.5rem 3rem;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: #1a56db;
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-menu a {
+        padding: 0.75rem 1rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .page-header {
+        padding: 5rem 1rem 1.5rem;
+    }
+
+    .page-header h1 {
+        font-size: 1.6rem;
+    }
+
+    .konfirmasi-detail table th {
+        width: 35%;
+        font-size: 0.85rem;
+    }
+
+    .konfirmasi-detail table td {
+        font-size: 0.9rem;
+    }
+
+    .btn-lg {
+        padding: 0.875rem 1.5rem;
+        font-size: 1rem;
+    }
+
+    .step {
+        padding-left: 3.5rem;
+    }
+
+    .step::before {
+        width: 2.5rem;
+        height: 2.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 0 1rem;
+    }
+
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .card {
+        padding: 1.25rem;
+    }
+
+    .tinggi-indicator {
+        flex-direction: column;
+    }
+}
